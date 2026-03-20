@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Assignment 3. Triangle</title>
+	</head>
+	<body>
+		<h1>Assignment 3. Triangle</h1>
+		<p id="result"></p>
+
+		<script>
+			let a = Number(prompt('Enter length of side a:'));
+			let b = Number(prompt('Enter length of side b:'));
+			let c = Number(prompt('Enter length of side c:'));
+
+			let type;
+
+			if (a === b && b === c) {
+				type = 'equilateral';
+			} else if (a === b || b === c || a === c) {
+				type = 'isosceles';
+			} else if (!(a === b || b === c || a === c)) {
+				type = 'scalene';
+			}
+
+			document.getElementById('result').textContent = `The triangle is ${type}.`;
+		</script>
+	</body>
+</html>

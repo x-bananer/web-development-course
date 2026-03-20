@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Assignment 2. Arrays and numbers</title>
+	</head>
+	<body>
+		<h1>Assignment 2. Arrays and numbers</h1>
+        <p id="result"></p>
+
+		<script>
+			let numbers = [];
+
+			numbers.push(Number(prompt('Enter number #1:')));
+			numbers.push(Number(prompt('Enter number #2:')));
+			numbers.push(Number(prompt('Enter number #3:')));
+			numbers.push(Number(prompt('Enter number #4:')));
+			numbers.push(Number(prompt('Enter number #5:')));
+
+			console.log('Numbers:', numbers);
+
+			let result = document.getElementById('result');
+			result.innerHTML += `Numbers: ${numbers.join(', ')}. `;
+
+			let searchNumber = Number(prompt('Enter a number you want to search:'));
+
+			if (numbers.includes(searchNumber)) {
+				console.log(`Number ${searchNumber} is found in the array.`);
+				result.innerHTML += `Number ${searchNumber} is found in the array. `;
+			} else {
+				console.log(`Number ${searchNumber} is not found in the array.`);
+				result.innerHTML += `Number ${searchNumber} is not found in the array. `;
+			}
+
+			numbers.pop();
+
+			console.log('Updated numbers:', numbers);
+			result.innerHTML += `Updated numbers: ${numbers.join(', ')}. `;
+
+			numbers.sort((a, b) => a - b);
+
+			console.log('Sorted numbers:', numbers);
+			result.innerHTML += `Sorted Numbers: ${numbers.join(', ')}. `;
+		</script>
+	</body>
+</html>

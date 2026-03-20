@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Assignment 3. Series of numbers</title>
+	</head>
+	<body>
+		<h1>Assignment 3.</h1>
+		<p id="result"></p>
+
+		<script>
+			let numbers = [];
+			let input;
+
+			while (true) {
+				input = prompt(
+					'Enter a number (leave empty to finish):'
+				);
+
+				if (input) {
+					numbers.push(Number(input));
+				} else {
+					break;
+				}
+			}
+
+			let evenNumbers = [];
+
+			for (let number of numbers) {
+				if (number % 2 === 0) {
+					evenNumbers.push(number);
+				}
+			}
+
+			let result = document.getElementById('result');
+
+			if (evenNumbers.length > 0) {
+				result.textContent = `Even numbers: ${evenNumbers.join(', ')}.`;
+				console.log('Even numbers:', evenNumbers);
+			} else {
+				result.textContent = 'Even numbers: none';
+				console.log('Even numbers: none');
+			}
+
+			result.textContent += ` Program finished.`;
+			console.log('Program finished.');
+		</script>
+	</body>
+</html>

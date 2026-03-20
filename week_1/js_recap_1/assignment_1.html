@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Assignment 1. Celsius to Fahrenheit and Kelvin</title>
+    </head>
+    <body>
+        <h1>Assignment 1. Celsius to Fahrenheit and Kelvin</h1>
+
+        <p id="celsius"></p>
+        <p id="fahrenheit"></p>
+        <p id="kelvin"></p>
+
+        <script>
+            let celsius = Number(prompt("Enter temperature in Celsius:"));
+            let fahrenheit = (celsius * 9/5) + 32;
+            let kelvin = celsius + 273.15;
+
+            
+            document.getElementById("celsius").textContent = `Celsius: ${celsius} °C`;
+            document.getElementById("fahrenheit").textContent = `Fahrenheit: ${fahrenheit} °F`;
+            document.getElementById("kelvin").textContent = `Kelvin: ${kelvin} K`;
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Assignment 5. Sorted numbers with a param</title>
+	</head>
+	<body>
+		<h1>Assignment 5. Sorted numbers with a param</h1>
+		<p>Open the console to see the result.</p>
+
+		<script>
+			const sortArray = (numbers, order) => {
+				let sortedArray = [...numbers];
+
+				if (order === "asc") {
+					sortedArray.sort((a, b) => a - b);
+				}
+
+				if (order === "desc") {
+					sortedArray.sort((a, b) => b - a);
+				}
+
+				return sortedArray;
+			}
+
+			const array = [2, 8, 2, 5, 9, 1, 0];
+
+			console.log('Original array:', array);
+
+			const ascArray = sortArray(array, "asc");
+			console.log('Sorted asc:', ascArray);
+
+			const descArray = sortArray(array, "desc");
+			console.log('Sorted desc:', descArray);
+		</script>
+	</body>
+</html>

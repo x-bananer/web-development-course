@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Assignment 6. Product</title>
+	</head>
+	<body>
+		<h1>Assignment 6. Product</h1>
+		<table border="1" id="table"></table>
+
+		<script>
+			let number = Number(prompt('Enter a positive integer:'));
+			let table = document.getElementById('table');
+
+			for (let i = 1; i <= number; i++) {
+				let row = '<tr>';
+
+				for (let j = 1; j <= number; j++) {
+					let product = i * j;
+					row += `<td>${product}</td>`;
+				}
+
+				row += '</tr>';
+
+				table.innerHTML += row;
+			}
+		</script>
+	</body>
+</html>

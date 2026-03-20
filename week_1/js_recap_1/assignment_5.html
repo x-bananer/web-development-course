@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Assignment 5. Numbers</title>
+	</head>
+	<body>
+		<h1>Assignment 5. Numbers</h1>
+		<p id="result"></p>
+
+		<script>
+			let number = Number(prompt('Enter a positive integer:'));
+			let sum = 0;
+
+			for (let i = 1; i <= number; i++) {
+				sum += i;
+			}
+
+			document.getElementById('result').textContent = `The sum of natural numbers from 1 to ${number} is ${sum}.`;
+		</script>
+	</body>
+</html>

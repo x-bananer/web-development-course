@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Assignment 6. Movies</title>
+	</head>
+	<body>
+		<h1>Assignment 6. Movies</h1>
+		<p id="result"></p>
+
+		<script>
+			let movies = [];
+
+			while (true) {
+				const title = prompt(
+					"Enter movie title (leave empty to finish):"
+				);
+
+				if (title === "") {
+					break;
+				}
+
+				let rating;
+
+				while (true) {
+					const input = prompt(`Enter rating for "${title}" (1-5):`);
+					rating = Number(input);
+
+					if (rating >= 1 && rating <= 5) {
+						break;
+					}
+
+					alert("Error! Please enter a number between 1 and 5.");
+				}
+
+				const movie = {
+					title: title,
+					rating: rating,
+				};
+
+				movies.push(movie);
+			}
+
+			movies.sort((a, b) => b.rating - a.rating);
+
+			const bestMovie = movies[0];
+
+			const result = document.getElementById("result");
+
+			const title = document.createElement("h2");
+			title.textContent = "Sorted movies:";
+			result.appendChild(title);
+
+			const list = document.createElement("ul");
+
+			for (let movie of movies) {
+				const item = document.createElement("li");
+				item.textContent = `${movie.title}: ${movie.rating}`;
+				list.appendChild(item);
+			}
+
+			result.appendChild(list);
+
+			const best = document.createElement("p");
+			best.innerHTML = `The best movie: ${bestMovie.title} (${bestMovie.rating})`;
+			result.appendChild(best);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Assignment 2. Two points</title>
+        
+	</head>
+	<body>
+        <h1>Assignment 2. Two points</h1>
+        <p id="distance"></p>
+
+		<script>
+			let point1 = prompt(
+				'Enter coordinates of point 1 as x, y separated by a comma:'
+			).split(',');
+			let point2 = prompt(
+				'Enter coordinates of point 2 as x, y separated by a comma:'
+			).split(',');
+
+			let x1 = Number(point1[0]);
+			let y1 = Number(point1[1]);
+
+			let x2 = Number(point2[0]);
+			let y2 = Number(point2[1]);
+
+			let distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+
+			document.getElementById('distance').textContent = `Distance between (${x1}, ${y1}) and (${x2}, ${y2}) is ${distance}`;
+		</script>
+	</body>
+</html>

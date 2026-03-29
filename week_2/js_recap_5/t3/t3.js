@@ -1,8 +1,10 @@
+const REQRES_API_KEY = 'ADD YOUR REQRES API KEY HERE';
+
 const createUser = async () => {
     try {
         const response = await fetch('https://reqres.in/api/unknown/23', {
             headers: {
-                'x-api-key': 'reqres_8562c0bb3a4241a7add4bd6d19132c12',
+                'x-api-key': REQRES_API_KEY,
             },
         });
 
